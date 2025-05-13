@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 const potentialStudentSchema = new mongoose.Schema(
   {
     course: {

@@ -32,8 +32,7 @@ mongoose
   )
   .then(() => {
     console.log("Successfully connected to MongoDB");
-    rror("Error creating admin:", error);
-    //   });
+
     app.listen(PORT, () => {
       console.log(`App is listening on ${PORT} port`);
     });
