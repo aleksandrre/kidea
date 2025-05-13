@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 
 import potentialRoute from "./routes/potentialStudentRoute.js";
 import questionRoute from "./routes/potentialStudentRoute.js";
+import subscriptionRoutes from "./routes/subscriptionRoute.js";
 
 const PORT = 3001;
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 
 app.use("/potentialStudent", potentialRoute);
 app.use("/question", questionRoute);
+app.use("/subscription", subscriptionRoutes);
 
 // Database connection
 
