@@ -20,6 +20,7 @@ const questionSchema = new mongoose.Schema(
     mobile: { type: String },
     theme: {
       type: String,
+      required: true,
     },
     question: {
       type: String,

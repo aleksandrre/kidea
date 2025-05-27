@@ -3,7 +3,14 @@ import { Question } from "../models/questionModel.js";
 export const addQuestion = async (req, res) => {
   try {
     const { fullName, email, mobile, theme, question } = req.body;
-
+    if (!fullName || !email || !theme || !question) {
+      return res
+        .status(400)
+        .json({
+          success: false,
+          message: "fullName, email , theme , question სავალდებულო ველებია",
+        });
+    }
     // Create new question document
     const newQuestion = new Question({
       fullName,
