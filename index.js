@@ -4,15 +4,13 @@ import cors from "cors";
 import mongoose from "mongoose";
 
 import potentialRoute from "./routes/potentialStudentRoute.js";
-import questionRoute from "./routes/potentialStudentRoute.js";
+import questionRoute from "./routes/questionRoute.js";
 import subscriptionRoutes from "./routes/subscriptionRoute.js";
 
 const PORT = 3001;
 const app = express();
 
-app.use(
-  cors()
-);
+app.use(cors());
 app.use(express.json());
 
 // Routes
