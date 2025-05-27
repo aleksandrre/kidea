@@ -29,15 +29,6 @@ export const addPotentialStudent = async (req, res) => {
       });
     }
 
-    // Check if the phone number is already registered
-    const existingStudent = await PotentialStudent.findOne({ phone });
-
-    if (existingStudent) {
-      return res
-        .status(400)
-        .json({ message: "Phone number already registered" });
-    }
-
     // Create a new potential student instance
 
     // If promoCode is not provided, create a new student without promoCode
@@ -59,7 +50,7 @@ export const addPotentialStudent = async (req, res) => {
       .json({ message: "Potential student information saved successfully" });
   } catch (error) {
     console.error("Error saving potential student information:", error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: error.message });
   }
 };
 
